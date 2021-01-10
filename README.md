@@ -1,4 +1,4 @@
-#Spring Boot JWT Authentication example with Spring Security & Spring Data JPA
+##Spring Boot JWT Authentication example with Spring Security & Spring Data JPA
 ## Spring REST Sample with Swagger
 ## File Upload
 
