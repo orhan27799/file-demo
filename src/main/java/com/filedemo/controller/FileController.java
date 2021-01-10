@@ -46,7 +46,7 @@ public class FileController {
 		String fileBaseName = fileStorageService.getFileBaseName();
 		
 		String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-	                .path("/downloadFile/")
+	                .path("/api/file/download/")
 	                .path(fileName)
 	                .toUriString();
 		 
@@ -85,6 +85,10 @@ public class FileController {
 	
 	@DeleteMapping("/delete/{fileName:.+}")
 	public ResponseEntity<Void> deleteFile(@PathVariable String fileName,HttpServletRequest request) {
+		
+		//delete database 
+		fileStorageService.deleteFile(fileName);
+		
 		// Load file as Resource
 		Resource resource=fileStorageService.loadFileAsResource(fileName);
 		

@@ -23,5 +23,8 @@ public interface FileService {
 	String getFileBaseName();
 	
 	List<File> findAll();
+	
+	
+	void deleteFile(String fileName);
 
 }

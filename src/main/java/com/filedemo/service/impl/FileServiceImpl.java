@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,6 +22,7 @@ import com.filedemo.exception.FileStorageException;
 import com.filedemo.exception.InvalidFileException;
 import com.filedemo.exception.MyFileNotFoundException;
 import com.filedemo.model.File;
+import com.filedemo.model.User;
 import com.filedemo.property.FileStorageProperties;
 import com.filedemo.repository.FileRepository;
 import com.filedemo.service.FileService;
@@ -139,5 +141,15 @@ public class FileServiceImpl implements FileService {
 	public List<File> findAll() {
 		return fileRepository.findAll();
 	}
+
+	@Override
+	public void deleteFile(String fileName) {
+		File file = fileRepository.findByFileName(fileName)
+				.orElseThrow(() -> new MyFileNotFoundException("File Not Found with fileName: " + fileName));
+		fileRepository.delete(file);
+		
+	}
+
+	
 
 }
