@@ -114,6 +114,11 @@ http://localhost:8080/api/auth/signin
 Response :{"id":12,"username":"admin","email":"admin@gmail.com","roles":["ROLE_USER","ROLE_ADMIN"],"tokenType":"Bearer","accessToken":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYxMDMwNjU3OCwiZXhwIjoxNjEwMzkyOTc4fQ.w_9OpC2kwdBUvGOK7A6xEzpmxqNZHwtvM0uKABYb3EOspYdHOH35x8IbH0KFomzZQlZmyUczoiZoZNB8d2rhmQ"}
 ```
 
+## Spring REST Sample with Swagger
+```
+http://localhost:8080/swagger-ui/
+```
+
 
 ## File Upload  
 ```
@@ -142,3 +147,5 @@ http://localhost:8080/api/file/list
 ```
 http://localhost:8080/api/file/delete/filename.png
 ```
+
+
