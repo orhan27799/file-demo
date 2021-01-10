@@ -1,6 +1,6 @@
-# Spring Boot JWT Authentication file upload  with Spring Security & Spring Data JPA
+#Spring Boot JWT Authentication example with Spring Security & Spring Data JPA
 ## Spring REST Sample with Swagger
-
+## File Upload
 
 ## Dependency
 – If you want to use PostgreSQL:
